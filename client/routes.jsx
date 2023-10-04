@@ -54,7 +54,7 @@ Route.propTypes.component = PropTypes.elementType.isRequired;
 const routes = (
   <Switch>
     <Route exact path="/" component={mobileFirst(MobileIDEView, IDEView)} />
-    <Route
+    {/* <Route
       path="/login"
       component={userIsNotAuthenticated(
         mobileFirst(responsiveForm(LoginView), LoginView)
@@ -117,21 +117,20 @@ const routes = (
     <Route path="/account" component={userIsAuthenticated(AccountView)} />
     <Route path="/about" component={IDEView} />
 
-    {/* Mobile-only Routes */}
     <Route path="/preview" component={MobileSketchView} />
     <Route path="/preferences" component={MobilePreferences} />
     <Route path="/privacy-policy" component={Legal} />
     <Route path="/terms-of-use" component={Legal} />
-    <Route path="/code-of-conduct" component={Legal} />
+    <Route path="/code-of-conduct" component={Legal} /> */}
   </Switch>
 );
 
 function Routing() {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getUser());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(getUser());
+  // }, []);
 
   return <App>{routes}</App>;
 }
