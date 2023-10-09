@@ -1,5 +1,4 @@
 import sinon from 'sinon';
-import 'sinon-mongoose';
 
 // Import the actual model to be mocked
 const Project = jest.requireActual('../project').default;

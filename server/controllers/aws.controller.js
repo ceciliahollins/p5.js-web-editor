@@ -1,11 +1,8 @@
 import { v4 as uuidv4 } from 'uuid';
 import S3Policy from 's3-policy-v4';
 import s3 from '@auth0/s3';
-import mongoose from 'mongoose';
 import { getProjectsForUserId } from './project.controller';
 import { findUserByUsername } from './user.controller';
-
-const { ObjectId } = mongoose.Types;
 
 const client = s3.createClient({
   maxAsyncS3: 20,
@@ -33,14 +30,11 @@ export function getObjectKey(url) {
   const urlArray = url.split('/');
   const objectKey = urlArray.pop();
   const userId = urlArray.pop();
-  if (ObjectId.isValid(userId) && userId === new ObjectId(userId).toString()) {
-    return `${userId}/${objectKey}`;
-  }
   return objectKey;
 }
 
 export function deleteObjectsFromS3(keyList, callback) {
-  const keys = keyList.map((key) => { return { Key: key }; }); // eslint-disable-line
+  const keys = keyList.map((key) => ({ Key: key })); // eslint-disable-line
   if (keyList.length > 0) {
     const params = {
       Bucket: `${process.env.S3_BUCKET}`,

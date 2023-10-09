@@ -4,16 +4,6 @@
   "repository": "https://github.com/processing/p5.js-web-editor",
   "logo": "https://p5js.org/assets/img/p5js.svg",
   "keywords": ["processing", "p5js", "p5.js"],
-  "addons": [
-    {
-      "plan": "mongolab:sandbox",
-      "as": "MONGO"
-    },
-    {
-      "plan": "mailgun:starter",
-      "as": "MAILGUN"
-    }
-  ],
   "env": {
     "API_URL": {
       "value": "/editor"
@@ -86,8 +76,5 @@
       "description": "A secret key for verifying the integrity of signed cookies.",
       "generator": "secret"
     }
-  },
-  "scripts": {
-    "postdeploy": "MONGO_URL=$MONGO_URI MAILGUN_KEY=$MAILGUN_API_KEY npm run fetch-examples:prod"
   }
 }

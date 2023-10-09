@@ -2,21 +2,13 @@ import differenceInSeconds from 'date-fns/differenceInSeconds';
 
 import Project from '../project';
 
-const mockingoose = require('mockingoose');
-
 const datesWithinSeconds = (first, second) =>
   differenceInSeconds(first, second) < 2;
 
 describe('models/project', () => {
-  beforeEach(() => {
-    mockingoose.resetAll();
-  });
-
   describe('projectSchema', () => {
     it('sets default project properties', (done) => {
       const data = {};
-
-      mockingoose(Project).toReturn(data, 'create');
 
       Project.create(data, (err, newProject) => {
         expect(err).toBeNull();
@@ -30,8 +22,6 @@ describe('models/project', () => {
     it('creates a slug from the project name', (done) => {
       const data = { name: 'My project' };
 
-      mockingoose(Project).toReturn(data, 'create');
-
       Project.create(data, (err, newProject) => {
         expect(newProject.slug).toBe('My_project');
         done();
@@ -40,8 +30,6 @@ describe('models/project', () => {
 
     it('exposes _id as id', (done) => {
       const data = { name: 'My project' };
-
-      mockingoose(Project).toReturn(data, 'create');
 
       Project.create(data, (err, newProject) => {
         expect(newProject.id).toBe(newProject._id);
@@ -52,8 +40,6 @@ describe('models/project', () => {
     it('generates timestamps', (done) => {
       const data = { name: 'My project' };
       const now = new Date();
-
-      mockingoose(Project).toReturn(data, 'create');
 
       Project.create(data, (err, newProject) => {
         // Dates should be near to now, by a few ms
@@ -70,8 +56,6 @@ describe('models/project', () => {
 
     it('serializes to JSON', (done) => {
       const data = { name: 'My project' };
-
-      mockingoose(Project).toReturn(data, 'create');
 
       Project.create(data, (err, newProject) => {
         const now = new Date();

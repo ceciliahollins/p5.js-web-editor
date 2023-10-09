@@ -1,5 +1,4 @@
 import Express from 'express';
-import mongoose from 'mongoose';
 import path from 'path';
 import webpack from 'webpack';
 import cors from 'cors';
@@ -11,23 +10,6 @@ import assetRoutes from './routes/asset.routes';
 import renderPreviewIndex from './views/previewIndex';
 
 const app = new Express();
-
-// This also works if you take out the mongoose connection
-// but i have no idea why
-const mongoConnectionString = process.env.MONGO_URL;
-// Connect to MongoDB
-mongoose.Promise = global.Promise;
-mongoose.connect(mongoConnectionString, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
-mongoose.set('useCreateIndex', true);
-mongoose.connection.on('error', () => {
-  console.error(
-    'MongoDB Connection Error. Please make sure that MongoDB is running.'
-  );
-  process.exit(1);
-});
 
 const allowedCorsOrigins = [
   /p5js\.org$/,
@@ -73,7 +55,6 @@ app.get('/', (req, res) => {
 });
 
 app.use('/', embedRoutes);
-app.use('/', assetRoutes);
 
 // Handle missing routes.
 app.get('*', (req, res) => {
