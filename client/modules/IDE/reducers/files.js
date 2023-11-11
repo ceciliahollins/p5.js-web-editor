@@ -23,7 +23,7 @@ export const initialState = () => {
     },
     {
       name: 'sketch.js',
-      content: defaultSketch,
+      content: activity0Sketch,
       id: a,
       _id: a,
       isSelectedFile: true,
