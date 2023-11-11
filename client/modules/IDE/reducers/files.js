@@ -3,7 +3,8 @@ import * as ActionTypes from '../../../constants';
 import {
   defaultSketch,
   defaultCSS,
-  defaultHTML
+  defaultHTML,
+  activity0Sketch
 } from '../../../../server/domain-objects/createDefaultFiles';
 
 export const initialState = () => {
@@ -22,7 +23,7 @@ export const initialState = () => {
     },
     {
       name: 'sketch.js',
-      content: defaultSketch,
+      content: activity0Sketch,
       id: a,
       _id: a,
       isSelectedFile: true,
