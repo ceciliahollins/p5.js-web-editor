@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import getConfig from '../../../utils/getConfig';
 import { registerFrame } from '../../../utils/dispatcher';
+import { startSketch } from '../actions/ide';
 
 const Frame = styled.iframe`
   min-height: 100%;

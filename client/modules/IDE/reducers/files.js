@@ -3,7 +3,8 @@ import * as ActionTypes from '../../../constants';
 import {
   defaultSketch,
   defaultCSS,
-  defaultHTML
+  defaultHTML,
+  activity0Sketch
 } from '../../../../server/domain-objects/createDefaultFiles';
 
 export const initialState = () => {
