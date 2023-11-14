@@ -5,6 +5,7 @@ import Figure1 from './images/activity00_figure1.png';
 import Figure2 from './images/activity00_figure2.png';
 import RightArrowIcon from '../../../images/right-arrow.svg';
 import LeftArrowIcon from '../../../images/left-arrow.svg';
+import SquareIcon from '../../../images/stop.svg';
 
 export default function Activity00() {
   return (
@@ -15,30 +16,42 @@ export default function Activity00() {
         showStatus={false}
         renderArrowPrev={(onClickHandler, hasPrev, label) =>
           hasPrev && (
-            <button
-              type="button"
-              onClick={onClickHandler}
-              title={label}
+            <LeftArrowIcon
               className="arrow"
               style={{ left: 15 }}
-            >
-              <LeftArrowIcon focusable="false" aria-hidden="true" />
-            </button>
+              onClick={onClickHandler}
+              focusable="false"
+              aria-hidden="true"
+            />
           )
         }
         renderArrowNext={(onClickHandler, hasNext, label) =>
           hasNext && (
-            <button
-              type="button"
-              onClick={onClickHandler}
-              title={label}
+            <RightArrowIcon
               className="arrow"
               style={{ right: 15 }}
-            >
-              <RightArrowIcon focusable="false" aria-hidden="true" />
-            </button>
+              onClick={onClickHandler}
+              focusable="false"
+              aria-hidden="true"
+            />
           )
         }
+        renderIndicator={(onClickHandler, isSelected, index, label) => {
+          if (isSelected) {
+            return (
+              <SquareIcon className="indicator" style={{ color: '#8f8f8f' }} />
+            );
+          }
+          return (
+            <SquareIcon
+              className="indicator"
+              onClick={onClickHandler}
+              value={index}
+              key={index}
+              focusable="false"
+            />
+          );
+        }}
       >
         <div className="carouselItem">
           <h3> Attach the flower piece to see the flower </h3>
