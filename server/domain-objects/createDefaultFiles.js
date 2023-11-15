@@ -6,31 +6,7 @@ function draw() {
   background(220);
 }`;
 
-export const activity0Sketch = `function setup() {
-  createCanvas(400, 400);
-}
-
-function draw() {
-  background('#96d676');
-  flower(width/2, height/2);
-  bee(width/2, height/2);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function bee(x, y) {
+export const hiddenCode = `function bee(x, y) {
   fill(166, 225, 229, 150);
   ellipse(x - 50, y - 20, 75, 40);
   ellipse(x - 50, y, 75, 40);
@@ -75,6 +51,16 @@ function flower(x, y) {
   circle(x, y, 150);
 }`;
 
+export const activity0Sketch = `function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background('#96d676');
+  flower(width/2, height/2);
+  bee(width/2, height/2);
+}`;
+
 export const defaultHTML = `<!DOCTYPE html>
 <html lang="en">
   <head>
@@ -88,6 +74,7 @@ export const defaultHTML = `<!DOCTYPE html>
     <main>
     </main>
     <script src="sketch.js"></script>
+    <script src="hidden.js"></script>
   </body>
 </html>
 `;
@@ -100,6 +87,7 @@ canvas {
   display: block;
 }`;
 
+// This does not actually seem to create what the default files are, see files.js instead
 export default function createDefaultFiles() {
   return {
     'index.html': {
@@ -109,6 +97,9 @@ export default function createDefaultFiles() {
       content: defaultCSS
     },
     'sketch.js': {
+      content: defaultSketch
+    },
+    'hidden.js': {
       content: defaultSketch
     }
   };

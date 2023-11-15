@@ -4,6 +4,7 @@ import {
   defaultSketch,
   defaultCSS,
   defaultHTML,
+  hiddenCode,
   activity0Sketch
 } from '../../../../server/domain-objects/createDefaultFiles';
 
@@ -11,13 +12,14 @@ export const initialState = () => {
   const a = objectID().toHexString();
   const b = objectID().toHexString();
   const c = objectID().toHexString();
+  const d = objectID().toHexString();
   const r = objectID().toHexString();
   return [
     {
       name: 'root',
       id: r,
       _id: r,
-      children: [b, a, c],
+      children: [b, a, c, d],
       fileType: 'folder',
       content: ''
     },
@@ -45,6 +47,15 @@ export const initialState = () => {
       content: defaultCSS,
       id: c,
       _id: c,
+      fileType: 'file',
+      children: [],
+      filePath: ''
+    },
+    {
+      name: 'hidden.js',
+      content: hiddenCode,
+      id: d,
+      _id: d,
       fileType: 'file',
       children: [],
       filePath: ''
