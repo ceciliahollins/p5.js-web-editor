@@ -15,7 +15,7 @@
 }
 
 .carouselItem {
-    padding: 50px;
+    padding: 75px;
     display: inline-block;
     vertical-align: middle;
 }
@@ -36,20 +36,11 @@
 
 .indicator {
     color: #ededed;
-    width: 10;
-    height: 10;
     display: inline-block;
-    margin: 0 8px;
-}
-
-.nextButton {
-    background-color: rgb(145, 181, 182);
-    color: white;
-    padding: 20px;
+    margin: 0px 8px;
 }
 
 button:focus {
     outline: none;
     border: none;
 }
-

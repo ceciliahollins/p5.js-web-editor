@@ -1,9 +1,9 @@
 import React from 'react';
-import Activity00 from '../activities/activity00';
+import Activity0 from '../activities/activity0/activity0';
 
 const PuzzleView = () => (
   <div className="puzzle-view-container">
-    <Activity00 />
+    <Activity0 />
   </div>
 );
 
