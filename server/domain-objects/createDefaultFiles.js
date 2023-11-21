@@ -6,7 +6,17 @@ function draw() {
   background(220);
 }`;
 
-export const hiddenCode = `function bee(x, y) {
+export const hiddenCode = `
+let center;
+let lightGreen;
+
+function setup() {
+  createCanvas(400, 400);
+  center = width/2;
+  lightGreen = color('#96d676');
+}
+
+function bee(x, y) {
   fill(166, 225, 229, 150);
   ellipse(x - 50, y - 20, 75, 40);
   ellipse(x - 50, y, 75, 40);
@@ -49,16 +59,6 @@ function flower(x, y) {
   }
   fill('#ffeba1');
   circle(x, y, 150);
-}`;
-
-export const activity0Sketch = `function setup() {
-  createCanvas(400, 400);
-}
-
-function draw() {
-  background('#96d676');
-  flower(width/2, height/2);
-  bee(width/2, height/2);
 }`;
 
 export const defaultHTML = `<!DOCTYPE html>

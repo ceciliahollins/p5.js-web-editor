@@ -1,11 +1,10 @@
 import objectID from 'bson-objectid';
 import * as ActionTypes from '../../../constants';
+import activity0Sketch from '../activities/activity0/activity0Sketch';
 import {
-  defaultSketch,
   defaultCSS,
   defaultHTML,
-  hiddenCode,
-  activity0Sketch
+  hiddenCode
 } from '../../../../server/domain-objects/createDefaultFiles';
 
 export const initialState = () => {
