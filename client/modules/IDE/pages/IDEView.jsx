@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useLocation, Prompt, useParams } from 'react-router-dom';
+import { useLocation, Prompt, useParams, Outlet } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
@@ -27,7 +27,8 @@ import {
   PreviewWrapper
 } from '../components/Editor/MobileEditor';
 import IDEOverlays from '../components/IDEOverlays';
-import PuzzleView from '../pages/PuzzleView';
+import Activity0 from '../activities/activity0/activity0';
+import Activity from '../activities/activityTemplate';
 
 function getTitle(project) {
   const { id } = project;
@@ -40,31 +41,6 @@ function isAuth(pathname) {
 
 function isOverlay(pathname) {
   return pathname === '/about' || pathname === '/feedback';
-}
-
-function WarnIfUnsavedChanges() {
-  const hasUnsavedChanges = useSelector((state) => state.ide.unsavedChanges);
-
-  const { t } = useTranslation();
-
-  const currentLocation = useLocation();
-
-  return (
-    <Prompt
-      when={hasUnsavedChanges}
-      message={(nextLocation) => {
-        if (
-          isAuth(nextLocation.pathname) ||
-          isAuth(currentLocation.pathname) ||
-          isOverlay(nextLocation.pathname) ||
-          isOverlay(currentLocation.pathname)
-        ) {
-          return true; // allow navigation
-        }
-        return t('Nav.WarningUnsavedChanges');
-      }}
-    />
-  );
 }
 
 export const CmControllerContext = React.createContext({});
@@ -135,8 +111,6 @@ const IDEView = () => {
         <title>{getTitle(project)}</title>
       </Helmet>
       <IDEKeyHandlers getContent={() => cmRef.current?.getContent()} />
-      <WarnIfUnsavedChanges />
-      <Toast />
       <CmControllerContext.Provider value={cmRef}>
         <Header syncFileContent={syncFileContent} />
       </CmControllerContext.Provider>
@@ -151,7 +125,9 @@ const IDEView = () => {
               >
                 <Sidebar />
                 <SplitPane split="vertical" defaultSize="50%">
-                  <PuzzleView />
+                  <div className="puzzle-view-container">
+                    <Activity />
+                  </div>
                   <SplitPane
                     className="IDE-view"
                     split="horizontal"
