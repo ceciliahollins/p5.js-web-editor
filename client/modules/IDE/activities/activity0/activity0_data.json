@@ -1,0 +1,16 @@
+{
+    "title": "Activity 0: Basic use of puzzle pieces and understanding errors",
+    "activityNumber": "1",
+
+    "slide0Top": "Find the code piece that says `bee` and connect it at the top. Add the bee piece, see how there are errors. The bee needs some information. Where should the bee sit? We must tell it.",
+    "slide0Bottom": "We get some errors! This is because the bee needs information to be on the screen. It must know where it should sit. We can give the bee its information with more code pieces.",
+    "slide1Top": "Find the two code pieces that say `center`. These will attach on the right side of the bee piece. These code pices tell the bee to sit in the middle of the screen.",
+    "slide1Bottom": "We get no more errors! The computer is happy because it has all the information it needs to draw a bee.",
+    "slide2Top": "Try taking one piece off, we get errors again. This is the computer telling us that it doesnt understand what we are trying to do.",
+    "slide2Bottom": "The bee needs two attachements, and we only added one. We have to make sure we add all the required puzzle pieces the computer needs, so that it can build what we are trying to make.",
+    "slide3Top": "Add the center piece back on again, and the computer is happy!",
+    "slide3Bottom": "We must make sure we have all of our pieces inserted, or else we get errors.",
+    "slide4Top": "",
+    "slide4Bottom": ""
+}
+
