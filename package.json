@@ -167,7 +167,7 @@
     "babel-plugin-styled-components": "^1.13.2",
     "bcryptjs": "^2.4.3",
     "blob-util": "^1.2.1",
-    "body-parser": "^1.20.1",
+    "body-parser": "^1.20.4",
     "bson-objectid": "^2.0.3",
     "classnames": "^2.3.1",
     "clipboard": "^1.7.1",
@@ -184,8 +184,8 @@
     "dotenv": "^2.0.0",
     "dropzone": "^4.3.0",
     "escape-string-regexp": "^1.0.5",
-    "eslint-webpack-plugin": "^3.1.1",
-    "express": "^4.18.2",
+    "eslint-webpack-plugin": "^3.2.0",
+    "express": "^4.22.0",
     "express-basic-auth": "^1.2.0",
     "express-session": "^1.17.2",
     "final-form": "^4.20.2",
@@ -250,7 +250,7 @@
     "styled-theming": "^2.2.0",
     "url": "^0.11.0",
     "uuid": "^8.3.2",
-    "webpack": "^5.76.0",
+    "webpack": "^5.98.0",
     "webpack-dev-middleware": "^5.3.1",
     "xhr": "^2.6.0"
   }
